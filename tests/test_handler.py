@@ -62,5 +62,5 @@ def test_pandas_preserved():
 def test_resample_without_fit_raises():
     X, y = make_classification(n_samples=50, n_features=3, random_state=4)
     h = ImbalancedDatasetHandler(strategy="smote", random_state=0)
-    with pytest.raises(Exception):
+    with pytest.raises(NotFittedError):
         h.resample(X, y)
